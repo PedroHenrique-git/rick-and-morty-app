@@ -6,8 +6,8 @@ class RickAndMortyService {
 
   String baseURL = 'https://rickandmortyapi.com';
 
-  Future<CharacterResponse> getCharacters() async {
-    final response = await http.get('$baseURL/api/character');
+  Future<CharacterResponse> getCharacters({page = 1}) async {
+    final response = await http.get('$baseURL/api/character?page=$page');
 
     if (response.statusCode == 200) {
       return CharacterResponse.fromJson(response.data);

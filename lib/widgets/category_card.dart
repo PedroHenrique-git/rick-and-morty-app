@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class CategoryCard extends StatelessWidget {
   final Image banner;
   final String categoryTitle;
-  final void Function() onTap;
+  final VoidCallback onTap;
 
   const CategoryCard(
       {super.key,
@@ -23,7 +23,7 @@ class CategoryCard extends StatelessWidget {
             ],
           ),
           margin: const EdgeInsets.only(bottom: 20),
-          width: MediaQuery.of(context).size.width,
+          width: 400,
           child: Center(
               child: Column(children: [
             banner,

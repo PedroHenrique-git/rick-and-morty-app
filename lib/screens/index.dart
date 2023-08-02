@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:rickandmorty_app/widgets/category_card.dart';
+import 'package:rickandmorty_app/widgets/system_app_bar.dart';
 
 class Index extends StatelessWidget {
   const Index({super.key});
@@ -8,18 +9,12 @@ class Index extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         resizeToAvoidBottomInset: false,
-        appBar: AppBar(
-          centerTitle: true,
-          scrolledUnderElevation: 0,
-          title: const Text(
-            'Rick and morty library',
-            style: TextStyle(color: Colors.white, fontSize: 18),
-          ),
-        ),
+        appBar: systemAppBar(),
         body: SingleChildScrollView(
           child: Padding(
             padding: const EdgeInsets.all(20),
-            child: Column(children: [
+            child: Center(
+                child: Column(children: [
               CategoryCard(
                   banner: const Image(
                       image: AssetImage('assets/images/characters.jpg')),
@@ -35,7 +30,7 @@ class Index extends StatelessWidget {
                       image: AssetImage('assets/images/locations.jpg')),
                   categoryTitle: 'Locations',
                   onTap: () => {Navigator.pushNamed(context, '/locations')})
-            ]),
+            ])),
           ),
         ));
   }
